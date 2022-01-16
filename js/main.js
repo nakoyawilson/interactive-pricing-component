@@ -1,8 +1,13 @@
 const price = document.querySelector("#price-range");
 const numPageviews = document.querySelector(".pageviews-num");
 const cost = document.querySelector(".billing-cost");
-const toggleSwitch = document.querySelector("#billing-toggle-switch");
+const toggleIndicator = document.querySelector(".circle");
+const toggleSlider = document.querySelector(".toggle-slider");
 const badge = document.querySelector(".badge");
+const radioButtons = document.querySelectorAll("input[type='radio']");
+let billingSelection = document.querySelector(
+  'input[name="billing-selection"]:checked'
+).value;
 
 const updateInfo = (pageviews, amount) => {
   numPageviews.textContent = pageviews;
@@ -15,7 +20,7 @@ const updateSliderColor = (slider) => {
 };
 
 const displayPrice = () => {
-  if (toggleSwitch.checked) {
+  if (billingSelection === "Yearly Billing") {
     if (price.value === "0") {
       updateInfo("10K", "$6.00");
     } else if (price.value === "1") {
@@ -27,7 +32,7 @@ const displayPrice = () => {
     } else {
       updateInfo("1M", "$27.00");
     }
-  } else {
+  } else if (billingSelection === "Monthly Billing") {
     if (price.value === "0") {
       updateInfo("10K", "$8.00");
     } else if (price.value === "1") {
@@ -58,8 +63,34 @@ price.addEventListener("input", (event) => {
   displayPrice();
   updateSliderColor(event.target);
 });
-toggleSwitch.addEventListener("input", displayPrice);
 
 window.addEventListener("resize", () => {
   setBadgeContent();
+});
+
+radioButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    billingSelection = button.value;
+    displayPrice();
+    if (billingSelection === "Yearly Billing") {
+      toggleIndicator.classList.add("toggle-left");
+      toggleSlider.style.background = "hsl(174, 86%, 45%)";
+    } else {
+      toggleIndicator.classList.remove("toggle-left");
+      toggleSlider.style.background = "hsl(223, 50%, 87%)";
+    }
+  });
+});
+
+toggleSlider.addEventListener("click", () => {
+  if (billingSelection === "Monthly Billing") {
+    toggleIndicator.classList.add("toggle-left");
+    toggleSlider.style.background = "hsl(174, 86%, 45%)";
+    billingSelection = "Yearly Billing";
+  } else if (billingSelection === "Yearly Billing") {
+    toggleIndicator.classList.remove("toggle-left");
+    toggleSlider.style.background = "hsl(223, 50%, 87%)";
+    billingSelection = "Monthly Billing";
+  }
+  displayPrice();
 });

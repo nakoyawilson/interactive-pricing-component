@@ -18,21 +18,21 @@
   </head>
   <body>
     <main class="main-section">
-      <section class="heading-section">
+      <div class="heading-section">
         <h1 class="title">Simple, traffic-based pricing</h1>
         <p class="introductory-paragraph">
           Sign-up for our 30-day trial. No credit card required.
         </p>
-      </section>
+      </div>
       <div class="card">
         <div class="info">
-            <div class="pageviews">
-              <span class="pageviews-num"></span><span> Pageviews</span>
-            </div>
-            <div class="fees">
-              <span class="billing-cost"></span
-              ><span class="billing-period"> / month</span>
-            </div>
+          <div class="pageviews">
+            <span class="pageviews-num"></span><span> Pageviews</span>
+          </div>
+          <div class="fees">
+            <span class="billing-cost"></span
+            ><span class="billing-period"> / month</span>
+          </div>
           <div class="slider-container">
             <input
               type="range"
@@ -44,18 +44,28 @@
             />
           </div>
           <div class="billing">
-            <span class="">Monthly Billing</span>
+            <input
+              type="radio"
+              id="monthly"
+              name="billing-selection"
+              value="Monthly Billing"
+              checked="checked"
+            />
+            <label for="monthly">Monthly Billing</label>
             <span class="toggle-switch">
-              <label for="billing-toggle-switch" class="switch">
-                <input
-                  type="checkbox"
-                  id="billing-toggle-switch"
-                  class="checkbox"
-                />
-                <span class="toggle-slider"></span>
-              </label>
+              <span class="switch">
+                <span class="toggle-slider"><span class="circle"></span></span>
+              </span>
             </span>
-            <span>Yearly Billing <span class="badge"></span>
+            <input
+              type="radio"
+              id="yearly"
+              name="billing-selection"
+              value="Yearly Billing"
+            />
+            <label for="yearly"
+              >Yearly Billing <span class="badge"></span
+            ></label>
           </div>
         </div>
         <div class="call-to-action">
@@ -79,7 +89,7 @@
             </ul>
           </div>
           <div>
-            <button class="start-button">Start my trial</button>
+            <button class="start-button" type="submit">Start my trial</button>
           </div>
         </div>
       </div>

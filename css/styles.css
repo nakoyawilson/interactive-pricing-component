@@ -45,6 +45,10 @@ body {
   min-height: 100vh;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 /* Main Section */
 
 .main-section,
@@ -211,17 +215,9 @@ body {
   margin-inline: 1rem;
 }
 
-/* Hide default HTML checkbox */
-.switch .checkbox {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
 /* The slider */
 .toggle-slider {
   position: absolute;
-  cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
@@ -230,13 +226,14 @@ body {
   -webkit-transition: transform 0.4s;
   transition: transform 0.4s;
   border-radius: 34px;
+  cursor: pointer;
 }
 
 .toggle-switch:hover .switch .toggle-slider {
   background: var(--soft-cyan);
 }
 
-.toggle-slider:before {
+.circle {
   position: absolute;
   content: "";
   height: 0.9rem;
@@ -249,11 +246,7 @@ body {
   border-radius: 50%;
 }
 
-.checkbox:checked + .toggle-slider {
-  background-color: var(--strong-cyan);
-}
-
-.checkbox:checked + .toggle-slider:before {
+.toggle-left {
   -webkit-transform: translateX(23px);
   -ms-transform: translateX(23px);
   transform: translateX(23px);
