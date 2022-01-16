@@ -17,58 +17,76 @@
     <title>Frontend Mentor | Interactive pricing component</title>
   </head>
   <body>
-    <header>
-      <h1 class="title">Simple, traffic-based pricing</h1>
-      <p class="header-paragraph">
-        Sign-up for our 30-day trial. No credit card required.
-      </p>
-    </header>
-    <main>
-      <div>
-        <label for="price-range" class=""
-          ><div class="pageviews">
-            <span class="pageviews-num"></span><span> Pageviews</span>
+    <main class="main-section">
+      <section class="heading-section">
+        <h1 class="title">Simple, traffic-based pricing</h1>
+        <p class="introductory-paragraph">
+          Sign-up for our 30-day trial. No credit card required.
+        </p>
+      </section>
+      <div class="card">
+        <div class="info">
+          <label for="price-range" class="card-header"
+            ><div class="pageviews">
+              <span class="pageviews-num"></span><span> Pageviews</span>
+            </div>
+            <div class="fees">
+              <span class="billing-cost"></span
+              ><span class="billing-period"> / month</span>
+            </div></label
+          >
+          <div class="slider-container">
+            <input
+              type="range"
+              min="0"
+              max="4"
+              value="2"
+              class="slider"
+              id="price-range"
+            />
+          </div>
+          <div class="billing">
+            <span class="">Monthly Billing</span>
+            <span class="toggle-switch">
+              <label for="billing-toggle-switch" class="switch">
+                <input
+                  type="checkbox"
+                  id="billing-toggle-switch"
+                  class="checkbox"
+                />
+                <span class="toggle-slider"></span>
+              </label>
+            </span>
+            <span>Yearly Billing <span class="badge"></span>
+          </div>
+        </div>
+        <div class="call-to-action">
+          <div>
+            <ul class="cta-list">
+              <li class="cta-item">
+                <span class="check-icon"
+                  ><img src="images/icon-check.svg" alt="" /></span
+                >Unlimited websites
+              </li>
+              <li class="cta-item">
+                <span class="check-icon"
+                  ><img src="images/icon-check.svg" alt="" /></span
+                >100% data ownership
+              </li>
+              <li class="cta-item">
+                <span class="check-icon"
+                  ><img src="images/icon-check.svg" alt="" /></span
+                >Email reports
+              </li>
+            </ul>
           </div>
           <div>
-            <span class="billing-cost"></span
-            ><span class="billing-period"> /month</span>
-          </div></label
-        >
-      </div>
-      <div class="slider-container">
-        <input
-          type="range"
-          min="0"
-          max="4"
-          value="2"
-          class="slider"
-          id="price-range"
-        />
-      </div>
-      <div class="billing">
-        <span class="">Monthly Billing</span>
-        <span class="toggle-switch">
-          <label for="billing-toggle-switch" class="switch">
-            <input type="checkbox" id="billing-toggle-switch" />
-            <span class="slider"></span>
-          </label>
-        </span>
-        <span>Yearly Billing <span class="badge">25% discount</span></span>
-      </div>
-      <div class="call-to-action">
-        <div>
-          <ul>
-            <li>Unlimited websites</li>
-            <li>100% data ownership</li>
-            <li>Email reports</li>
-          </ul>
-        </div>
-        <div>
-          <button>Start my trial</button>
+            <button class="start-button">Start my trial</button>
+          </div>
         </div>
       </div>
     </main>
-    <footer>
+    <footer class="footer-section">
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
