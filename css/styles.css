@@ -294,6 +294,7 @@ input[type="radio"] {
   color: var(--pale-blue);
   font-weight: 600;
   border-radius: 50px;
+  font-size: 0.75rem;
 }
 
 .start-button:hover {
