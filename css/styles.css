@@ -46,7 +46,8 @@ body {
 }
 
 input[type="radio"] {
-  display: none;
+  /* display: none; */
+  opacity: 0;
 }
 
 /* Main Section */
@@ -212,7 +213,8 @@ input[type="radio"] {
   display: inline-block;
   width: 2.7rem;
   height: 1.3rem;
-  margin-inline: 1rem;
+  margin-left: 1rem;
+  margin-right: 0.1875rem;
 }
 
 /* The slider */
